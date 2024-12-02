@@ -29,7 +29,6 @@ if __name__ == "__main__":
     # -- 2 + 1 + 0 + 1 + 2 + 5
     # -- 11
 
-    two_lists = list()
     with open("historic_locations.txt") as input_file:
         two_lists = [
             tuple(map(int, line.split("  ")))
