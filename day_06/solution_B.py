@@ -75,6 +75,7 @@ def print_route(guard_start, floor_dimensions, obstructions, route_dirs, trap):
             tile = Coord(x, y)
             row.append(sprites.get(tile, "."))
         print("".join(row))
+    print()
 
 
 def simulate_guard(guard_pos, guard_dir, obstructions):
@@ -140,7 +141,6 @@ def trap_positions(floor_plan: List[str], verbose: bool = False) -> int:
                 traps.add(next_pos)
                 if verbose:
                     print_route(guard_start, floor, obstructions, alt_route, next_pos)
-                    print()
         # simulation as usual
         route_dirs[guard_pos].add(guard_dir)
         guard_pos, guard_dir = simulate_guard(guard_pos, guard_dir, obstructions)
@@ -235,4 +235,4 @@ if __name__ == "__main__":
         floor_plan = [line.strip() for line in input_file]
 
     print("\nmain:")
-    print(trap_positions(floor_plan))
+    print(trap_positions(floor_plan))  # ~ 2 mins

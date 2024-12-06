@@ -50,9 +50,8 @@ def guard_route(floor_plan: List[str], verbose: bool = False) -> int:
             if char == "#":
                 obstructions.add(Coord(x, y))
             elif char == "^":
-                # NOTE: facing up
                 guard_pos = Coord(x, y)
-                guard_dir = compass[0]
+                guard_dir = compass[0]  # (^) North
     # simulate patrol
     route = {guard_pos}
     while in_area(guard_pos, floor_width, floor_height):
